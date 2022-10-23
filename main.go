@@ -2,9 +2,12 @@ package main
 
 import (
 	"fmt"
+
+	"github.com/moabukar/discord-bot-go/bot"
+	"github.com/moabukar/discord-bot-go/config"
 )
 
-func main(){
+func main() {
 	err := config.ReadConfig()
 
 	if err != nil {
@@ -14,6 +17,6 @@ func main(){
 
 	bot.Start()
 
-	<-make(chan, struct{})
+	<-make(chan struct{})
 	return
 }
