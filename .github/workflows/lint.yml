@@ -1,0 +1,30 @@
+# ---
+# name: go
+# on:
+#   pull_request:
+#     types:
+#       - opened
+#       - reopened
+#       - synchronize
+#     branches:
+#       - master
+#       - main
+
+# permissions:
+#   contents: read
+
+# jobs:
+#   golangci:
+#     name: lint
+#     runs-on: ubuntu-20.04
+#     steps:
+#       - uses: actions/setup-go@v3
+#         with:
+#           go-version: 1.17
+
+#       - uses: actions/checkout@v3
+
+#       - name: golangci-lint
+#         uses: golangci/golangci-lint-action@v3
+#         with:
+#           version: v1.48.0
