@@ -81,4 +81,12 @@ func messageHandler(s *discordgo.Session, m *discordgo.MessageCreate) {
 		s.ChannelMessageSend(m.ChannelID, "https://nohello.com")
 	}
 
+	if strings.Contains(m.Content, s.State.User.Mention()) {
+		s.ChannelMessageSend(m.ChannelID, "https://nohello.com")
+	}
+
+	if strings.ToLower(m.Content) == "nh" {
+		// Send a message with nohello.com
+		s.ChannelMessageSend(m.ChannelID, "https://nohello.com")
+	}
 }
