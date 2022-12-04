@@ -3,6 +3,8 @@ package bot
 import (
 	"fmt"
 
+	"strings"
+
 	"github.com/bwmarrin/discordgo"
 	"github.com/moabukar/discord-bot-go/config"
 )
@@ -44,12 +46,39 @@ func Start() {
 
 func messageHandler(s *discordgo.Session, m *discordgo.MessageCreate) {
 
-	if m.Author.ID == BotID {
+	// if m.Author.ID == BotID {
+	// 	return
+	// }
+
+	if m.Author.ID == s.State.User.ID {
 		return
 	}
 
 	if m.Content == "ping" {
 		_, _ = s.ChannelMessageSend(m.ChannelID, "pongg!")
+	}
+
+	if m.Content == "salaam" {
+		_, _ = s.ChannelMessageSend(m.ChannelID, "walaukum salaam!")
+	}
+
+	if m.Content == "assalamu alaykum" {
+		_, _ = s.ChannelMessageSend(m.ChannelID, "walaukum salaam wrwb!")
+	}
+
+	if m.Author.ID == s.State.User.ID {
+		return
+	}
+
+	// If the message is "hello"
+	if strings.ToLower(m.Content) == "hello" {
+		// Send a message with nohello.com
+		s.ChannelMessageSend(m.ChannelID, "https://nohello.com")
+	}
+
+	if strings.ToLower(m.Content) == "hi" {
+		// Send a message with nohello.com
+		s.ChannelMessageSend(m.ChannelID, "https://nohello.com")
 	}
 
 }
