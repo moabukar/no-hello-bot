@@ -16,14 +16,6 @@ To get started with No-Hello-Bot, you'll need to add it to your Discord server.
 
 Once you've set up the words you'd like the bot to recognize, it will start responding to them with fun gifs. Enjoy!
 
-## Screenshots
-
-## How to Use
-
-
-## Configuration
-
-
 ## Libraries
 
 No Hello Bot for Discord was built using the Go libraries listed in go.mod
@@ -34,3 +26,7 @@ We welcome contributions to No-Hello-Bot! If you have an idea for a new feature 
 ## License
 
 No-Hello-Bot is licensed under the MIT license. See [LICENSE](LICENSE) for more details.
+
+## TODO
+
+- Add images and more testing.
