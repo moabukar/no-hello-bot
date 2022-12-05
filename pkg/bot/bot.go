@@ -74,7 +74,7 @@ func messageHandler(s *discordgo.Session, m *discordgo.MessageCreate) {
 
 	switch strings.ToLower(m.Content) {
 	// If the message is "hello"
-	case "hi", "hello":
+	case "hi", "hello", "wag1", "ello", "lo", "h3llo", "hiya", "hi there", "":
 		// Send a message with nohello.com
 		_, _ = s.ChannelMessageSend(m.ChannelID, "https://nohello.com")
 	default:
@@ -84,6 +84,13 @@ func messageHandler(s *discordgo.Session, m *discordgo.MessageCreate) {
 	switch strings.ToLower(m.Content) {
 	case "asc":
 		_, _ = s.ChannelMessageSend(m.ChannelID, "wcs wrwb!")
+	default:
+		// empty
+	}
+
+	switch strings.ToLower(m.Content) {
+	case "السلام عليكم":
+		_, _ = s.ChannelMessageSend(m.ChannelID, "و عليكم السلام")
 	default:
 		// empty
 	}
