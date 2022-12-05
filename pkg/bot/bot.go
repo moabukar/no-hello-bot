@@ -87,7 +87,7 @@ func messageHandler(s *discordgo.Session, m *discordgo.MessageCreate) {
 	}
 
 	switch strings.ToLower(m.Content) {
-	case "wow":
+	case "wow", "wow!", "woww":
 		_, _ = s.ChannelMessageSend(m.ChannelID, "WOW!!!")
 	default:
 		// empty
