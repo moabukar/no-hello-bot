@@ -29,4 +29,5 @@ No-Hello-Bot is licensed under the MIT license. See [LICENSE](LICENSE) for more 
 
 ## TODO
 
-- Add images and more testing.
+- Add images/screenshots and more testing.
+- Add a detailed step-by-step deployment guide
