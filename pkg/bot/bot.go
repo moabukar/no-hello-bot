@@ -74,9 +74,27 @@ func messageHandler(s *discordgo.Session, m *discordgo.MessageCreate) {
 
 	switch strings.ToLower(m.Content) {
 	// If the message is "hello"
-	case "hi", "hello", "wag1", "ello", "lo", "h3llo", "hiya", "hi there", "":
+	case "hi", "hello", "wag1", "ello", "lo", "h3llo", "hiya", "hi there", "yo", "hey", "hell0", "h3y", "h3ll0":
 		// Send a message with nohello.com
 		_, _ = s.ChannelMessageSend(m.ChannelID, "https://nohello.com")
+	default:
+		// empty
+	}
+
+	switch strings.ToLower(m.Content) {
+	// If the message is "hello"
+	case "salaam", "salaams":
+		// Send a message with nohello.com
+		_, _ = s.ChannelMessageSend(m.ChannelID, "Walaykum salaam!")
+	default:
+		// empty
+	}
+
+	switch strings.ToLower(m.Content) {
+	// If the message is "hello"
+	case "inshaallah", "insha'allah", "in sha allah", "inshallah", "ان شاء الله":
+		// Send a message with nohello.com
+		_, _ = s.ChannelMessageSend(m.ChannelID, "inshaAllah")
 	default:
 		// empty
 	}
@@ -89,14 +107,27 @@ func messageHandler(s *discordgo.Session, m *discordgo.MessageCreate) {
 	}
 
 	switch strings.ToLower(m.Content) {
-	case "السلام عليكم":
-		_, _ = s.ChannelMessageSend(m.ChannelID, "و عليكم السلام")
+	case "jzk khair", "jazakallahu khair", "جزاك الله خيرا", "jazakallahu khairan", "jazaakallah Khair", "jazakallahu khayr", "jazaakallahu khayr", "jazakallahu khayran", "jazakAllahu khairaa", "jazakallah":
+		_, _ = s.ChannelMessageSend(m.ChannelID, "wa iyyaaka")
 	default:
 		// empty
 	}
 
 	switch strings.ToLower(m.Content) {
-	case "wow", "wow!", "woww":
+	case "jazakumallahu khayran", "جزاكم الله خيرا", "جزاكم الله خير", "jazakumallahu khair", "jazakumallahu khayr":
+		_, _ = s.ChannelMessageSend(m.ChannelID, "wa iyyaakum")
+	default:
+		// empty
+	}
+	switch strings.ToLower(m.Content) {
+	case "السلام عليكم":
+		_, _ = s.ChannelMessageSend(m.ChannelID, "و عليكم السلام - Please ask your question too!")
+	default:
+		// empty
+	}
+
+	switch strings.ToLower(m.Content) {
+	case "wow", "wow!", "woww", "wowww":
 		_, _ = s.ChannelMessageSend(m.ChannelID, "WOW!!!")
 	default:
 		// empty
