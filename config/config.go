@@ -22,7 +22,7 @@ func ReadConfig() error {
 
 	fmt.Println("Reading config ...")
 
-	file, err := ioutil.ReadFile("./config.json")
+	file, err := ioutil.ReadFile("./docs/config.json")
 
 	if err != nil {
 		fmt.Println(err.Error())

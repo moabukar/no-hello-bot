@@ -89,4 +89,9 @@ func messageHandler(s *discordgo.Session, m *discordgo.MessageCreate) {
 		// Send a message with nohello.com
 		s.ChannelMessageSend(m.ChannelID, "https://nohello.com")
 	}
+
+	if strings.ToLower(m.Content) == "nc" {
+		// Send a message with nohello.com
+		s.ChannelMessageSend(m.ChannelID, "Please give more context to your question!")
+	}
 }
