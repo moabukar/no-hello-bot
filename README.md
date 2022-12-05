@@ -2,7 +2,7 @@
 
 No-Hello-Bot is a Discord bot for Discord is an open-source bot that sends "no-hello" or gives you a prompt to give more context to your question!
 
-This Discord bot is easy to set up and use. All you need to do is add it to your server and set up the words you'd like it to recognize. It will then let you know when it sees one of those words in chat and respond to it with a gif or a link to the no-hello site. 
+This Discord bot is easy to set up and use. All you need to do is add it to your server and set up the words you'd like it to recognize. It will then let you know when it sees one of those words in chat and respond to it with a reply or a link to the no-hello site. 
 
 ## Getting Started
 
