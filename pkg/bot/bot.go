@@ -66,10 +66,6 @@ func messageHandler(s *discordgo.Session, m *discordgo.MessageCreate) {
 		_, _ = s.ChannelMessageSend(m.ChannelID, "walaukum salaam wrwb!")
 	}
 
-	if m.Author.ID == s.State.User.ID {
-		return
-	}
-
 	// If the message is "hello"
 	if strings.ToLower(m.Content) == "hello" {
 		// Send a message with nohello.com
