@@ -1,0 +1,39 @@
+project_name = "no-hello-bot"
+
+# Binary configuration
+[build]
+  # Binary info
+  binary_name = "nohellobot"
+  main_pkg = "github.com/moabukar/no-hello-bot/cmd"
+
+# Releases configuration
+[release]
+  # Release information
+  github_repo = "moabukar/no-hello-bot"
+  commit_author = "Mo Abukar <mo@moabukar.com>"
+
+# Pre-release steps
+[prerelease]
+  # Generate documentation
+  [prerelease.gitlab]
+    run = "go doc"
+    files = ["README.md"]
+
+# Post-release steps
+[postrelease]
+  # Publish changelog
+  [postrelease.github]
+    run = "git push origin main"
+    args = ["--follow-tags"]
+
+
+# Deployment configuration
+[deploy]
+  # Deploy binary to Github
+  [deploy.github]
+    run = "github-release release \
+      --user moabukar \
+      --repo no-hello-bot \
+      --tag {{ .Tag }} \
+      --name {{ .Tag }} \
+      --description \"Release {{ .Tag }}\""
