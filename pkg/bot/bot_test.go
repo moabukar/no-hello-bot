@@ -13,3 +13,21 @@ func TestGreet(t *testing.T) {
 		t.Errorf("Greet() got %v want %v", actual, expected)
 	}
 }
+
+func TestGetResponse(t *testing.T) {
+	input := "hello"
+	expected := "Hey, how can I help you?"
+	actual := bot.GetResponse(input)
+	if actual != expected {
+		t.Errorf("GetResponse() got %v want %v", actual, expected)
+	}
+}
+
+func TestHandleMessage(t *testing.T) {
+	input := "hey"
+	expected := "Hi there!"
+	actual := bot.HandleMessage(input)
+	if actual != expected {
+		t.Errorf("HandleMessage() got %v want %v", actual, expected)
+	}
+}
