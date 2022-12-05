@@ -82,41 +82,32 @@ func messageHandler(s *discordgo.Session, m *discordgo.MessageCreate) {
 	}
 
 	if strings.Contains(m.Content, s.State.User.Mention()) {
+		// Send a message with nohello.com when tagged.
 		s.ChannelMessageSend(m.ChannelID, "https://nohello.com")
 	}
 
 	if strings.ToLower(m.Content) == "nh" {
-		// Send a message with nohello.com
+		// Send a message with nohello.com when "nh" is used
 		s.ChannelMessageSend(m.ChannelID, "https://nohello.com")
 	}
 
 	if strings.ToLower(m.Content) == "salaam" {
-		// Send a message with nohello.com
+		// Send a prompt when a salaam is written
 		s.ChannelMessageSend(m.ChannelID, "Walaykum salaam! How can we help 🙂 If you've got a query, make sure to put in as much detail as possible!")
 	}
 
 	if strings.ToLower(m.Content) == "salam" {
-		// Send a message with nohello.com
+		// Salaam variation 2.0
 		s.ChannelMessageSend(m.ChannelID, "Walaykum salaam! How can we help 🙂 If you've got a query, make sure to put in as much detail as possible!")
 	}
 
-	if strings.ToLower(m.Content) == "python or go?" {
-		// Send a message with nohello.com
-		s.ChannelMessageSend(m.ChannelID, "Bun Python @adilyuken. Golang is better. Even I am created in Golang.")
-	}
-
 	if strings.ToLower(m.Content) == "assalamu alaykum" {
-		// Send a message with nohello.com
-		s.ChannelMessageSend(m.ChannelID, "walaukum salaam wrwb!")
-	}
-
-	if strings.ToLower(m.Content) == "salaam alaykum" {
-		// Send a message with nohello.com
+		// Salaam variation 3.0
 		s.ChannelMessageSend(m.ChannelID, "walaukum salaam wrwb!")
 	}
 
 	if strings.ToLower(m.Content) == "nc" {
-		// Send a message with nohello.com
+		// No Context variation
 		s.ChannelMessageSend(m.ChannelID, "Please give more context to your question!!")
 	}
 }
