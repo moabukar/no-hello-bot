@@ -26,7 +26,7 @@ Instead, say something direct like:
 We get that you’re trying to be nice by doing this but chat/text is not like real-life conversations so it’s slower. You are actually making the person wait for you longer to ask the question. As a result, losing time and productivity. 
 
 Don’t get me wrong, I’m not saying don’t ask your friends “how are you?” etc etc. There’s a time and place for that. But in such scenarios where you need help on some code, it makes it easier for others to answer your question.
- 
+
 ```
 
 ## Getting Started
@@ -56,3 +56,4 @@ No-Hello-Bot is licensed under the MIT license. See [LICENSE](LICENSE) for more 
 
 - Add images/screenshots and more testing.
 - Add a detailed step-by-step deployment guide
+- Add support for slack too
