@@ -86,6 +86,13 @@ func messageHandler(s *discordgo.Session, m *discordgo.MessageCreate) {
 		// empty
 	}
 
+	switch strings.ToLower(m.Content) {
+	case "wow":
+		_, _ = s.ChannelMessageSend(m.ChannelID, "WOW!!!")
+	default:
+		// empty
+	}
+
 	if strings.ToLower(m.Content) == "hi" {
 		// Send a message with nohello.com
 		s.ChannelMessageSend(m.ChannelID, "https://nohello.com")
