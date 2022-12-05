@@ -3,8 +3,8 @@ package main
 import (
 	"fmt"
 
-	"github.com/moabukar/discord-bot-go/bot"
 	"github.com/moabukar/discord-bot-go/config"
+	"github.com/moabukar/discord-bot-go/pkg/bot"
 )
 
 func main() {
