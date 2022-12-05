@@ -67,13 +67,15 @@ func messageHandler(s *discordgo.Session, m *discordgo.MessageCreate) {
 	}
 
 	// If the message is "hello"
-	if strings.ToLower(m.Content) == "hello" {
-		// Send a message with nohello.com
-		s.ChannelMessageSend(m.ChannelID, "https://nohello.com")
-	}
+	// if strings.ToLower(m.Content) == "hello" {
+	// 	// Send a message with nohello.com
+	// 	s.ChannelMessageSend(m.ChannelID, "https://nohello.com")
+	// }
 
 	switch strings.ToLower(m.Content) {
+	// If the message is "hello"
 	case "hi", "hello":
+		// Send a message with nohello.com
 		_, _ = s.ChannelMessageSend(m.ChannelID, "https://nohello.com")
 	default:
 		// empty
@@ -93,10 +95,10 @@ func messageHandler(s *discordgo.Session, m *discordgo.MessageCreate) {
 		// empty
 	}
 
-	if strings.ToLower(m.Content) == "hi" {
-		// Send a message with nohello.com
-		s.ChannelMessageSend(m.ChannelID, "https://nohello.com")
-	}
+	// if strings.ToLower(m.Content) == "hi" {
+	// 	// Send a message with nohello.com
+	// 	s.ChannelMessageSend(m.ChannelID, "https://nohello.com")
+	// }
 
 	if strings.Contains(m.Content, s.State.User.Mention()) {
 		// Send a message with nohello.com when tagged.
