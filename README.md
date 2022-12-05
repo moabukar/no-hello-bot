@@ -4,6 +4,31 @@ No-Hello-Bot is a Discord bot for Discord is an open-source bot that sends "no-h
 
 This Discord bot is easy to set up and use. All you need to do is add it to your server and set up the words you'd like it to recognize. It will then let you know when it sees one of those words in chat and respond to it with a reply or a link to the no-hello site. 
 
+## Inspiration
+
+```sh
+"Imagine calling someone on the phone, going hello! then putting them on hold... 🤦"
+
+When asking for help (coding or something technical) from people generally or co-workers, it’s important to ask directly what you want rather than have 5 minutes of conversation by going back and forth with the question. This no-hello bot reminds people to be efficient with their commnication via chat.
+
+For example, rather than saying:
+
+"Hello, how are you? Can you help me with some code?” OR "Hello, who knows python here?” 
+
+No! Too vague. The reply will possibly be “Hello, I’m fine, what is your issue exactly?”
+
+So you see you just lost some productivity by making the person ask YOU what is the question. 
+
+Instead, say something direct like:
+
+“Hello, I’m running this Terraform script that creates some EC2 instance AND I’m getting permission issue errors, can anyone help?”
+
+We get that you’re trying to be nice by doing this but chat/text is not like real-life conversations so it’s slower. You are actually making the person wait for you longer to ask the question. As a result, losing time and productivity. 
+
+Don’t get me wrong, I’m not saying don’t ask your friends “how are you?” etc etc. There’s a time and place for that. But in such scenarios where you need help on some code, it makes it easier for others to answer your question.
+ 
+```
+
 ## Getting Started
 
 To get started with No-Hello-Bot, you'll need to add it to your Discord server.
