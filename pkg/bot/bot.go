@@ -58,7 +58,7 @@ func messageHandler(s *discordgo.Session, m *discordgo.MessageCreate) {
 		_, _ = s.ChannelMessageSend(m.ChannelID, "pongg!")
 	}
 
-	if m.Content == "salaam" {
+	if m.Content == "salaam!" {
 		_, _ = s.ChannelMessageSend(m.ChannelID, "walaukum salaam!")
 	}
 
@@ -88,6 +88,16 @@ func messageHandler(s *discordgo.Session, m *discordgo.MessageCreate) {
 	if strings.ToLower(m.Content) == "nh" {
 		// Send a message with nohello.com
 		s.ChannelMessageSend(m.ChannelID, "https://nohello.com")
+	}
+
+	if strings.ToLower(m.Content) == "salaam" {
+		// Send a message with nohello.com
+		s.ChannelMessageSend(m.ChannelID, "Walaykum salaam! How can we help 🙂 If you've got a query, make sure to put in as much detail as possible!")
+	}
+
+	if strings.ToLower(m.Content) == "Python or Go" {
+		// Send a message with nohello.com
+		s.ChannelMessageSend(m.ChannelID, "Bun Python Adil, Golang is better bro! Even the AI bot here says Golang is better and I'm created in Golang")
 	}
 
 	if strings.ToLower(m.Content) == "nc" {
