@@ -108,6 +108,6 @@ func messageHandler(s *discordgo.Session, m *discordgo.MessageCreate) {
 
 	if strings.ToLower(m.Content) == "nc" {
 		// No Context variation
-		s.ChannelMessageSend(m.ChannelID, "Please give more context to your question!!")
+		s.ChannelMessageSend(m.ChannelID, "Please give more context to your question!! Outline the issue at hand; giving enough detail and background for someone to help")
 	}
 }
