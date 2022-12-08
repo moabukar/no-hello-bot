@@ -1,0 +1,15 @@
+FROM golang:1.14.4-alpine AS stage
+
+COPY . /bot
+
+WORKDIR /bot
+
+RUN apk add --no-cache --update git curl lua-stdlib lua musl-dev g++ libc-dev tesseract-ocr tesseract-ocr-dev \
+ && go mod tidy \
+ && go build -o bot
+
+FROM alpine:latest
+WORKDIR /root/
+RUN apk add --no-cache --update git curl lua-stdlib lua musl-dev g++ libc-dev tesseract-ocr tesseract-ocr-dev
+COPY --from=stage /bot/bot .
+CMD ["./bot"]

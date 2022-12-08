@@ -92,7 +92,7 @@ func messageHandler(s *discordgo.Session, m *discordgo.MessageCreate) {
 
 	switch strings.ToLower(m.Content) {
 	// If the message is "hello"
-	case "inshaallah", "insha'allah", "in sha allah", "inshallah", "ان شاء الله":
+	case "inshaallah", "insha'allah", "in sha allah", "inshallah", "ان شاء الله", "ia":
 		// Send a message with nohello.com
 		_, _ = s.ChannelMessageSend(m.ChannelID, "inshaAllah")
 	default:
@@ -107,6 +107,13 @@ func messageHandler(s *discordgo.Session, m *discordgo.MessageCreate) {
 	}
 
 	switch strings.ToLower(m.Content) {
+	case "haha":
+		_, _ = s.ChannelMessageSend(m.ChannelID, "😂")
+	default:
+		// empty
+	}
+
+	switch strings.ToLower(m.Content) {
 	case "jzk khair", "jazakallahu khair", "جزاك الله خيرا", "jazakallahu khairan", "jazaakallah Khair", "jazakallahu khayr", "jazaakallahu khayr", "jazakallahu khayran", "jazakAllahu khairaa", "jazakallah":
 		_, _ = s.ChannelMessageSend(m.ChannelID, "wa iyyaaka")
 	default:
@@ -114,7 +121,7 @@ func messageHandler(s *discordgo.Session, m *discordgo.MessageCreate) {
 	}
 
 	switch strings.ToLower(m.Content) {
-	case "jazakumallahu khayran", "جزاكم الله خيرا", "جزاكم الله خير", "jazakumallahu khair", "jazakumallahu khayr":
+	case "jazakumallahu khayran", "جزاكم الله خيرا", "جزاكم الله خير", "jazakumallahu khair", "jazakumallahu khayr", "jzk":
 		_, _ = s.ChannelMessageSend(m.ChannelID, "wa iyyaakum")
 	default:
 		// empty
@@ -129,6 +136,13 @@ func messageHandler(s *discordgo.Session, m *discordgo.MessageCreate) {
 	switch strings.ToLower(m.Content) {
 	case "wow", "wow!", "woww", "wowww":
 		_, _ = s.ChannelMessageSend(m.ChannelID, "WOW!!!")
+	default:
+		// empty
+	}
+
+	switch strings.ToLower(m.Content) {
+	case "alh":
+		_, _ = s.ChannelMessageSend(m.ChannelID, "Alhamdulillah")
 	default:
 		// empty
 	}
@@ -166,5 +180,20 @@ func messageHandler(s *discordgo.Session, m *discordgo.MessageCreate) {
 	if strings.ToLower(m.Content) == "nc" {
 		// No Context variation
 		s.ChannelMessageSend(m.ChannelID, "Please give more context to your question!! Outline the issue at hand; giving enough detail and background for someone to help")
+	}
+
+	if strings.ToLower(m.Content) == "ty" {
+		// No Context variation
+		s.ChannelMessageSend(m.ChannelID, "No problem!")
+	}
+
+	if strings.ToLower(m.Content) == "badq" {
+		// No Context variation
+		s.ChannelMessageSend(m.ChannelID, "https://discord.com/channels/844170468398202890/1050209853529915412")
+	}
+
+	if strings.ToLower(m.Content) == "badq1" {
+		// No Context variation
+		s.ChannelMessageSend(m.ChannelID, ".")
 	}
 }

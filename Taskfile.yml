@@ -1,0 +1,17 @@
+version: "3"
+
+tasks:
+    build:
+        desc: Build the app
+        cmds:
+        - GOFLAGS=-mod=mod go build -o cmd/ discord-bot-go.go 
+
+    run: 
+        desc: Run the app
+        cmds:
+        - GOFLAGS=-mod=mod go run cmd/ main.go -t $BOT_TOKEN
+
+    bot:
+        desc: Execute the bot
+        cmds:
+        - ./cmd/discord-bot-go -t $BOT_TOKEN
