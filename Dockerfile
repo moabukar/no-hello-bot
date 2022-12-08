@@ -13,7 +13,7 @@ COPY --from=build /src/cmd/discord-bot-go /discord-bot-go
 COPY --from=build /src/docs/config.json /etc/config.json
 USER 10000:10000
 EXPOSE 8888
-ENTRYPOINT [ "/", "-c", "/etc/config.json", "--migrate" ]
+# ENTRYPOINT [ "/", "-c", "/etc/config.json", "--migrate" ]
 
 ENTRYPOINT [ "/discord-bot-go"]
 
