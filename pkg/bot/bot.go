@@ -3,6 +3,7 @@ package bot
 import (
 	"fmt"
 
+	"regexp"
 	"strings"
 
 	"github.com/bwmarrin/discordgo"
@@ -211,4 +212,31 @@ func messageHandler(s *discordgo.Session, m *discordgo.MessageCreate) {
 		// No Context variation
 		s.ChannelMessageSend(m.ChannelID, ".")
 	}
+
+	str := "should i apply?"
+	matched, err := regexp.MatchString(`.*should i apply.*`, str)
+	// if err != nil {
+	// 	fmt.Println(err)
+	// }
+	// if matched && str == "should i apply?" {
+	// 	s.ChannelMessageSend(m.ChannelID, "just apply!!!")
+	// }
+
+	// str := "should i apply?"
+	// matched, err := regexp.MatchString(`.*should i apply.*`, str)
+	// if err != nil {
+	// 	fmt.Println(err)
+	// }
+	// switch {
+	// case matched && str == "should i apply?":
+	// 	s.ChannelMessageSend(m.ChannelID, "just apply!!!")
+	// default:
+
 }
+
+// switch strings.ToLower(m.Content) {
+// case  :
+// 	_, _ = s.ChannelMessageSend(m.ChannelID, "Alhamdulillah")
+// default:
+// 	// empty
+// }
