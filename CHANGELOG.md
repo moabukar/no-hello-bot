@@ -1,3 +1,8 @@
+### v1.1.1
+
+- Add new commands & replies
+- Fix duplicates
+
 ## v1.0.0
 
 - Initial release of No Hello Bot
