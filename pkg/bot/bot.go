@@ -187,6 +187,11 @@ func messageHandler(s *discordgo.Session, m *discordgo.MessageCreate) {
 		s.ChannelMessageSend(m.ChannelID, "Please give more context to your question!! Outline the issue at hand; giving enough detail and background for someone to help")
 	}
 
+	if strings.ToLower(m.Content) == "should i apply?" {
+		// No Context variation
+		s.ChannelMessageSend(m.ChannelID, "just apply!!!")
+	}
+
 	if strings.ToLower(m.Content) == "ty" {
 		// No Context variation
 		s.ChannelMessageSend(m.ChannelID, "No problem!")
