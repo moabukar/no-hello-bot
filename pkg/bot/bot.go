@@ -59,11 +59,11 @@ func messageHandler(s *discordgo.Session, m *discordgo.MessageCreate) {
 	}
 
 	if m.Content == "salaam!" {
-		_, _ = s.ChannelMessageSend(m.ChannelID, "walaukum salaam!")
+		_, _ = s.ChannelMessageSend(m.ChannelID, "walaykum salaam!")
 	}
 
 	if m.Content == "assalamu alaykum" {
-		_, _ = s.ChannelMessageSend(m.ChannelID, "walaukum salaam wrwb!")
+		_, _ = s.ChannelMessageSend(m.ChannelID, "walaykum salaam wrwb!")
 	}
 
 	// If the message is "hello"
@@ -167,15 +167,20 @@ func messageHandler(s *discordgo.Session, m *discordgo.MessageCreate) {
 		s.ChannelMessageSend(m.ChannelID, "Walaykum salaam! How can we help 🙂 If you've got a query, make sure to put in as much detail as possible!")
 	}
 
+	if strings.ToLower(m.Content) == "salaams" {
+		// Send a prompt when a salaam is written
+		s.ChannelMessageSend(m.ChannelID, "Walaykum salaam! How can we help 🙂 If you've got a query, make sure to put in as much detail as possible!")
+	}
+
 	if strings.ToLower(m.Content) == "salam" {
 		// Salaam variation 2.0
 		s.ChannelMessageSend(m.ChannelID, "Walaykum salaam! How can we help 🙂 If you've got a query, make sure to put in as much detail as possible!")
 	}
 
-	if strings.ToLower(m.Content) == "assalamu alaykum" {
-		// Salaam variation 3.0
-		s.ChannelMessageSend(m.ChannelID, "walaukum salaam wrwb!")
-	}
+	// if strings.ToLower(m.Content) == "assalamu alaykum" {
+	// 	// Salaam variation 3.0
+	// 	s.ChannelMessageSend(m.ChannelID, "walaukum salaam wrwb!")
+	// }
 
 	if strings.ToLower(m.Content) == "nc" {
 		// No Context variation
