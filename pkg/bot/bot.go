@@ -177,6 +177,11 @@ func messageHandler(s *discordgo.Session, m *discordgo.MessageCreate) {
 		s.ChannelMessageSend(m.ChannelID, "Walaykum salaam! How can we help 🙂 If you've got a query, make sure to put in as much detail as possible!")
 	}
 
+	if strings.ToLower(m.Content) == "salams" {
+		// Salaam variation 2.0
+		s.ChannelMessageSend(m.ChannelID, "Walaykum salaam! How can we help 🙂 If you've got a query, make sure to put in as much detail as possible!")
+	}
+
 	// if strings.ToLower(m.Content) == "assalamu alaykum" {
 	// 	// Salaam variation 3.0
 	// 	s.ChannelMessageSend(m.ChannelID, "walaukum salaam wrwb!")
