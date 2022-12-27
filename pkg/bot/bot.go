@@ -3,7 +3,6 @@ package bot
 import (
 	"fmt"
 
-	"regexp"
 	"strings"
 
 	"github.com/bwmarrin/discordgo"
@@ -193,6 +192,11 @@ func messageHandler(s *discordgo.Session, m *discordgo.MessageCreate) {
 		s.ChannelMessageSend(m.ChannelID, "Please give more context to your question!! Outline the issue at hand; giving enough detail and background for someone to help")
 	}
 
+	// if strings.ToLower(m.Content) == "jdi" {
+	// 	// No Context variation
+	// 	s.ChannelMessageSend(m.ChannelID, "just do it!!!")
+	// }
+
 	if strings.ToLower(m.Content) == "should i apply?" {
 		// No Context variation
 		s.ChannelMessageSend(m.ChannelID, "just apply!!!")
@@ -213,8 +217,8 @@ func messageHandler(s *discordgo.Session, m *discordgo.MessageCreate) {
 		s.ChannelMessageSend(m.ChannelID, ".")
 	}
 
-	str := "should i apply?"
-	matched, err := regexp.MatchString(`.*should i apply.*`, str)
+	// str := "should i apply?"
+	// matched, err := regexp.MatchString(`.*should i apply.*`, str)
 	// if err != nil {
 	// 	fmt.Println(err)
 	// }
@@ -232,11 +236,11 @@ func messageHandler(s *discordgo.Session, m *discordgo.MessageCreate) {
 	// 	s.ChannelMessageSend(m.ChannelID, "just apply!!!")
 	// default:
 
-}
+	switch strings.ToLower(m.Content) {
+	case "jdi":
+		_, _ = s.ChannelMessageSend(m.ChannelID, "just do it")
+	default:
+		// empty
+	}
 
-// switch strings.ToLower(m.Content) {
-// case  :
-// 	_, _ = s.ChannelMessageSend(m.ChannelID, "Alhamdulillah")
-// default:
-// 	// empty
-// }
+}
