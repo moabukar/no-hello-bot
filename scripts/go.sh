@@ -2,7 +2,7 @@
 
 set -euo pipefail
 
-BIN="no-hello-bot"
+BIN="discord-bot-go"
 
 # remove old bin directory and recreate it
 rm -f bin/*
@@ -24,11 +24,11 @@ then
 elif [ "$1" == "build" ];
 then
     echo "[*] Building go binary"
-    GOOS=${XC_OS} GOARCH=${XC_ARCH} go build -ldflags "${LD_FLAGS}" -o "bin/${BIN}" cmd/discord-bot-go.go
+    GOOS=${XC_OS} GOARCH=${XC_ARCH} go build -o "bin/${BIN}" cmd/discord-bot-go.go
 
 elif [ "$1" == "run" ];
 then
     echo "[*] Running go binary"
-    GOOS=${XC_OS} GOARCH=${XC_ARCH} go run -ldflags "${LD_FLAGS}" cmd/discord-bot-go.go -c config.json --log.level=debug
+    GOOS=${XC_OS} GOARCH=${XC_ARCH} go run cmd/discord-bot-go.go -c docs/config.json --log.level=debug
 
 fi

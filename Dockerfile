@@ -1,20 +1,43 @@
-FROM docker.io/library/golang:1.19 as build
+# FROM docker.io/library/golang:1.19 as build
+# ADD . /src
+# WORKDIR /src
+# RUN make go/build
+
+# RUN ls /src/bin
+
+# # -------------------------------------------
+
+# # FROM gcr.io/distroless/base
+# # FROM alpine
+# FROM golang:1.19
+
+# LABEL org.opencontainers.image.source=https://github.com/moabukar/no-hello-bot
+# LABEL org.opencontainers.image.description="No Hello Bot for Discord"
+# COPY --from=build /src/bin/discord-bot-go /discord-bot-go
+# COPY --from=build /src/docs/config.json /etc/config.json
+# COPY --from=build /src /app
+# USER root:root
+# EXPOSE 8888
+
+# # RUN ls /src/bin
+
+# # CMD ["./discord-bot-go", "-c", "/etc/config.json", "migrate"]
+# # CMD ["./src/bin/discord-bot-go", "-c", "/etc/config.json", "migrate"]
+
+
+# ---- WORKING ONE!
+FROM golang:latest
+
+
+LABEL org.opencontainers.image.source=https://github.com/moabukar/no-hello-bot
+LABEL org.opencontainers.image.description="No Hello Bot for Discord"
+
+USER 0:0
+EXPOSE 8888
+
 ADD . /src
 WORKDIR /src
 RUN make go/build
+RUN go build /src/cmd/discord-bot-go.go
 
-# -------------------------------------------
-
-FROM gcr.io/distroless/base
-# LABEL org.opencontainers.image.licenses=AGPLv3
-LABEL org.opencontainers.image.source=https://github.com/moabukar/no-hello-bot
-LABEL org.opencontainers.image.description="No Hello Bot for Discord"
-COPY --from=build /src/cmd/discord-bot-go /discord-bot-go
-COPY --from=build /src/docs/config.json /etc/config.json
-USER 10000:10000
-EXPOSE 8888
-# ENTRYPOINT [ "/", "-c", "/etc/config.json", "--migrate" ]
-
-ENTRYPOINT [ "/discord-bot-go"]
-
-# ENTRYPOINT [ "/discord-bot-go", "-c", "/etc/config.json", "--migrate" ]
+CMD ["./discord-bot-go"]
