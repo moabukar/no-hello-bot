@@ -26,7 +26,7 @@
 
 
 # ---- WORKING ONE!
-FROM golang:latest
+FROM golang:1.19
 
 
 LABEL org.opencontainers.image.source=https://github.com/moabukar/no-hello-bot

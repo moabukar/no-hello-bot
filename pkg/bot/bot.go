@@ -202,6 +202,11 @@ func messageHandler(s *discordgo.Session, m *discordgo.MessageCreate) {
 		s.ChannelMessageSend(m.ChannelID, "just apply!!!")
 	}
 
+	if strings.ToLower(m.Content) == "sia" {
+		// No Context variation
+		s.ChannelMessageSend(m.ChannelID, "just apply!!!")
+	}
+
 	if strings.ToLower(m.Content) == "ty" {
 		// No Context variation
 		s.ChannelMessageSend(m.ChannelID, "No problem!")
