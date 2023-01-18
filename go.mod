@@ -2,10 +2,7 @@ module github.com/moabukar/no-hello-bot
 
 go 1.19
 
-require (
-	github.com/bwmarrin/discordgo v0.26.1
-	github.com/moabukar/discord-bot-go v0.0.0-20221205011405-53f035278f0d
-)
+require github.com/bwmarrin/discordgo v0.27.0
 
 require (
 	github.com/gorilla/websocket v1.4.2 // indirect
