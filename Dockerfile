@@ -26,7 +26,7 @@
 
 
 # ---- WORKING ONE!
-FROM golang:1.19-bullseye
+FROM golang:alpine3.17 AS builder
 
 ENV TOKEN=$TOKEN
 
@@ -38,7 +38,24 @@ EXPOSE 8888
 
 ADD . /src
 WORKDIR /src
-RUN make go/build
+RUN apk update && apk add --no-cache make
+RUN go build -o discord-bot-go /src/cmd/discord-bot-go.go
+# RUN make go/build
 RUN go build /src/cmd/discord-bot-go.go
 
-CMD ["./discord-bot-go"]
+
+# CMD ["./discord-bot-go"]
+
+# FROM gcr.io/distroless/base
+
+FROM gcr.io/distroless/static
+
+# FROM scratch
+
+COPY --from=builder /src/discord-bot-go /app/discord-bot-go
+
+# USER nobody:nobody
+## Use IDs instead >> nobody=65534
+USER 65534:65534
+
+ENTRYPOINT ["/app/discord-bot-go"]
