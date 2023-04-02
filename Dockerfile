@@ -26,8 +26,9 @@
 
 
 # ---- WORKING ONE!
-FROM golang:1.19
+FROM golang:1.19-bullseye
 
+ENV TOKEN=$TOKEN
 
 LABEL org.opencontainers.image.source=https://github.com/moabukar/no-hello-bot
 LABEL org.opencontainers.image.description="No Hello Bot for Discord"
