@@ -9,7 +9,7 @@ env:
   AWS_REGION: us-east-1
   ECR_REPOSITORY: nohello
   K8S_NAMESPACE: default
-  K8S_DEPLOYMENT_NAME: no-hello-bot
+  K8S_DEPLOYMENT_NAME: nohello
 
 jobs:
   deploy:
@@ -35,7 +35,7 @@ jobs:
       with:
         context: .
         push: true
-        tags: ${{ steps.login-ecr.outputs.registry }}/no-hello-bot:${{ github.sha }}
+        tags: ${{ steps.login-ecr.outputs.registry }}/nohello:${{ github.sha }}
 
     - name: Install and configure AWS CLI
       run: |
@@ -48,31 +48,31 @@ jobs:
       run: |
         aws ecs create-cluster --cluster-name hello-bot-cluster
 
-    # - name: Register ECS task definition
-    #   run: |
-    #     aws ecs register-task-definition \
-    #       --family hello-bot-task \
-    #       --execution-role-arn REPLACE_WITH_EXECUTION_ROLE_ARN \
-    #       --container-definitions '[{
-    #         "name": "no-hello-bot",
-    #         "image": "${{ steps.login-ecr.outputs.registry }}/no-hello-bot:${{ github.sha }}",
-    #         "essential": true,
-    #         "portMappings": [{
-    #           "containerPort": 8888,
-    #           "hostPort": 8888
-    #         }]
-    #       }]'
+    - name: Register ECS task definition
+      run: |
+        aws ecs register-task-definition \
+          --family hello-bot-task \
+          --execution-role-arn REPLACE_WITH_EXECUTION_ROLE_ARN \
+          --container-definitions '[{
+            "name": "nohello",
+            "image": "${{ steps.login-ecr.outputs.registry }}/no-hello-bot:${{ github.sha }}",
+            "essential": true,
+            "portMappings": [{
+              "containerPort": 8888,
+              "hostPort": 8888
+            }]
+          }]'
 
-    # - name: Create ECS service
-    #   run: |
-    #     aws ecs create-service \
-    #       --cluster hello-bot-cluster \
-    #       --service-name hello-bot-service \
-    #       --task-definition hello-bot-task \
-    #       --desired-count 1 \
-    #       --launch-type FARGATE \
-    #       --network-configuration "awsvpcConfiguration={subnets=[REPLACE_WITH_SUBNET_ID_1,REPLACE_WITH_SUBNET_ID_2],assignPublicIp=ENABLED}"
+    - name: Create ECS service
+      run: |
+        aws ecs create-service \
+          --cluster hello-bot-cluster \
+          --service-name hello-bot-service \
+          --task-definition hello-bot-task \
+          --desired-count 1 \
+          --launch-type FARGATE \
+          --network-configuration "awsvpcConfiguration={subnets=[discord_bot_subnet,discord_bot_subnet],assignPublicIp=ENABLED}"
 
     - name: Update ECS service
       run: |
-        aws ecs update-service --cluster hello-bot-cluster --service hello-bot-service --force-new-deployment
+        aws ecs update-service --cluster nohello --service nohello --force-new-deployment
