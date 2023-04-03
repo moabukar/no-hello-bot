@@ -32,6 +32,8 @@ ENV TOKEN=$TOKEN
 
 LABEL org.opencontainers.image.source=https://github.com/moabukar/no-hello-bot
 LABEL org.opencontainers.image.description="No Hello Bot for Discord"
+ENV GOARCH=amd64
+
 
 USER 0:0
 EXPOSE 8888
