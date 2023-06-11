@@ -44,6 +44,10 @@ RUN apk update && apk add --no-cache make
 RUN go build -o discord-bot-go /src/cmd/discord-bot-go.go
 # RUN make go/build
 RUN go build /src/cmd/discord-bot-go.go
+# RUN echo '{"key":"value"}' > /src/docs/config.json
+
+COPY .env /app/.env
+ENV TOKEN_FILEPATH=/app/.env
 
 
 # CMD ["./discord-bot-go"]
@@ -54,7 +58,9 @@ FROM gcr.io/distroless/static
 
 # FROM scratch
 
+
 COPY --from=builder /src/discord-bot-go /app/discord-bot-go
+COPY --from=builder /src/docs/config.json ./docs/config.json
 
 # USER nobody:nobody
 ## Use IDs instead >> nobody=65534
