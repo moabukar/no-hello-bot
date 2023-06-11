@@ -128,7 +128,14 @@ func messageHandler(s *discordgo.Session, m *discordgo.MessageCreate) {
 	}
 	switch strings.ToLower(m.Content) {
 	case "السلام عليكم":
-		_, _ = s.ChannelMessageSend(m.ChannelID, "و عليكم السلام - Please ask your question too!")
+		_, _ = s.ChannelMessageSend(m.ChannelID, "وعليكم السلام - Please ask your question too!")
+	default:
+		// empty
+	}
+
+	switch strings.ToLower(m.Content) {
+	case "السلام عليكم ورحمة الله وبركاته":
+		_, _ = s.ChannelMessageSend(m.ChannelID, "وعليكم السلام ورحمة الله وبركاته- Please ask your question too!")
 	default:
 		// empty
 	}
