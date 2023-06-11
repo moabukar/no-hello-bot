@@ -59,6 +59,11 @@ Pre-requisites:
 1. Build image using Dockerfile >> `docker build -t nohello Dockerfile`
 2. Run container using `docker run nohello`
 
+## Run bot with env vars
+
+- `export TOKEN=<PUT_TOKEN_HERE>`
+- `go run cmd/discord-bot-go.go`
+
 ## Libraries
 
 No Hello Bot for Discord was built using the Go libraries listed in go.mod

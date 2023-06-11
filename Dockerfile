@@ -46,8 +46,8 @@ RUN go build -o discord-bot-go /src/cmd/discord-bot-go.go
 RUN go build /src/cmd/discord-bot-go.go
 # RUN echo '{"key":"value"}' > /src/docs/config.json
 
-COPY .env /app/.env
-ENV TOKEN_FILEPATH=/app/.env
+# COPY .env /app/.env
+# ENV TOKEN_FILEPATH=/app/.env
 
 
 # CMD ["./discord-bot-go"]
