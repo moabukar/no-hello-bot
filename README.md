@@ -58,6 +58,7 @@ Pre-requisites:
 
 1. Build image using Dockerfile >> `docker build -t nohello Dockerfile`
 2. Run container using `docker run nohello`
+3. Run containers with Docker using env var >> `docker run -d -e TOKEN=<BOT_TOKEN_HERE> nohello` (-d runs it in the background)
 
 ## Run bot with env vars
 
